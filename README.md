@@ -1,4 +1,4 @@
-# k8s_configs
+# k8s cluster Tomcat kubernetes
 This repository is used to document configuration of k8s
 
 # tomcat-kubernetes

@@ -36,30 +36,9 @@ metadata:
 type: kubernetes.io/service-account-token
 ```
 
-Create it SA:
+Create SA:
 ```
 kubectl apply -f service-account-token.yaml -n {namespace}
-```
-
-## Create a Cluster Role Biding: 
-Save the following text in a file cluster-role-tomcat.yaml
-```
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: cluster-admin-tomcat
-subjects:
-- kind: ServiceAccount
-  name: default # name of your service account
-  namespace: test-namespace # this is the namespace your service account is in
-roleRef: # referring to your ClusterRole
-  kind: ClusterRole
-  name: cluster-admin
-  apiGroup: rbac.authorization.k8s.io
-```
-Create it CRB:
-```
-kubectl apply -f cluster-role-tomcat.yaml -n {namespace}
 ```
 
 ## Create a cluster Role Biding: 
@@ -78,7 +57,7 @@ roleRef: # referring to your ClusterRole
   name: cluster-admin
   apiGroup: rbac.authorization.k8s.io
 ```
-Create it CRB:
+Create CRB:
 ```
 kubectl apply -f cluster-role-tomcat.yaml -n {namespace}
 ```

@@ -37,7 +37,7 @@ spec:
           - name: SA_TOKEN_FILE
             value: /usr/local/tokenFile   
           - name: KUBERNETES_NAMESPACE
-            value: pruebaspierre  
+            value: {namespace}  
           - name: API_TOKEN
             valueFrom:
               secretKeyRef:

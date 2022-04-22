@@ -1,5 +1,5 @@
 # K8S cluster Tomcat configuration and session replication
-This repository is used to document configuration of k8s
+This repository is used to document the configuration process for clustering with tomcat using k8s
 
 # tomcat-kubernetes
 What is needed to create a Tomcat Docker image to run a cluster of tomcats in Kubernetes.

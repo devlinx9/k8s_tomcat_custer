@@ -1,0 +1,51 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: backend
+spec:
+  serviceName: tomcat-service
+  podManagementPolicy: "Parallel"
+  selector:
+    matchLabels:
+      app: tomcat-test
+      tier: backend
+      track: stable
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: tomcat-test
+        tier: backend
+        track: stable
+    spec:
+      containers:
+        - name: tomcat-9
+          image: tomcat:9.0
+          command: ["/bin/sh","-c"]
+          args: ["printf '%s' $API_TOKEN > $SA_TOKEN_FILE  && catalina.sh run"]
+          volumeMounts:
+            - mountPath: /usr/local/tomcat/conf/server.xml
+              subPath: server.xml
+              readOnly: true
+              name: serverxml
+          ports:
+            - name: http
+              protocol: TCP
+              containerPort: 8080
+          env:
+          - name: SA_TOKEN_FILE
+            value: /usr/local/tokenFile   
+          - name: KUBERNETES_NAMESPACE
+            value: pruebaspierre  
+          - name: API_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: "api-access-token"
+                key: "token"
+      volumes:
+        - name: serverxml
+          configMap:
+            name: testconfig
+
+...

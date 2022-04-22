@@ -1,4 +1,4 @@
-# k8s cluster Tomcat kubernetes
+# K8S cluster Tomcat configuration and session replication
 This repository is used to document configuration of k8s
 
 # tomcat-kubernetes

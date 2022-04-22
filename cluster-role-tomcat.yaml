@@ -5,7 +5,7 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: default # name of your service account
-  namespace: pruebaspierre # this is the namespace your service account is in
+  namespace: namespace_name # this is the namespace your service account is in
 roleRef: # referring to your ClusterRole
   kind: ClusterRole
   name: cluster-admin

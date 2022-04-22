@@ -200,8 +200,9 @@ INFO [CloudMembership-memberDisappeared] org.apache.catalina.tribes.group.interc
 
 And your done :)
 
-For testing the application you could use the Oracle application ShoppingCart
-You have to set the <distributable /> tag in the WEB-INF/web.xml of the war
-To access to the tomcat use the hostname something like
+For testing the application you could use the Oracle application ShoppingCart 
+you have to set the <distributable /> tag in the WEB-INF/web.xml of the war
+
+Access to application
 https://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/10g/r3/cluster/session_state/files/shoppingcart.zip
 
